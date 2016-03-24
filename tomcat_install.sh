@@ -10,6 +10,7 @@ then
 fi
 
 # Begin Java installation
+# This area can be updated to whichever version of Java you would like
 install_java ()
 { JAVA_INSTALL=$(wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz)
   $JAVA_INSTALL
@@ -18,7 +19,7 @@ install_java ()
   ls /opt | grep jdk*
   if [ $? == 0 ]
   then
-      echo "JDK installed successfully"
+      echo "JDK untarred successfully"
   else
       echo "Java Install Failed"
   fi
@@ -49,7 +50,7 @@ install_java ()
 }  
 
 install_tomcat()
-{ # Install Tomcat finally!
+{ # Install Tomcat finally! Also, you can change the versions for this as well
   TOMCAT_INSTALL=$(wget http://mirror.cogentco.com/pub/apache/tomcat/tomcat-7/v7.0.63/bin/apache-tomcat-7.0.63.tar.gz)
   tar zxvf apache-tomcat-7.0.63.tar.gz
   # Move Tomcat to /opt
